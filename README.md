@@ -9,7 +9,7 @@ Site can be found in the description
 
 ## To build
 Clone the repo
-```git clone git@github.com:dabit3/complete-guide-to-full-stack-solana.git```
+> git clone git@github.com:dabit3/complete-guide-to-full-stack-solana.git
 Change into the project directory you'd like to run
 
 Install the dependencies
