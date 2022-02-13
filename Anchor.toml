@@ -1,0 +1,28 @@
+[features]
+seeds = false
+
+#if your program is called solana_twitter, then it will try to find the keypair located at target/deploy/solana_twitter-keypair.json
+#target/deploy/solana_twitter-keypair.json file before, it is important to acknowledge that this file is the proof that you own the program at this address.
+[programs.localnet]
+solana_twitter = "XG2JhaxMJTgtMSDRip9cLuhZgne2i6XPxETRDSYnjXZ"
+
+[programs.devnet]
+solana_twitter = "XG2JhaxMJTgtMSDRip9cLuhZgne2i6XPxETRDSYnjXZ"
+
+[programs.mainnet]
+solana_twitter = "XG2JhaxMJTgtMSDRip9cLuhZgne2i6XPxETRDSYnjXZ"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/Users/laiwei/.config/solana/id.json"
+
+# copys IDL file everytime we run anchor build, but won't copy program ID inside of the IDL
+[workspace]
+types = "app/src/idl/"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+copy-idl = "mkdir -p app/src/idl && cp target/idl/solana_twitter.json app/src/idl/solana_twitter.json"
