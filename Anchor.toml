@@ -16,7 +16,7 @@ solana_twitter = "XG2JhaxMJTgtMSDRip9cLuhZgne2i6XPxETRDSYnjXZ"
 url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "devnet"
+cluster = "localnet"
 wallet = "/Users/laiwei/.config/solana/id.json"
 
 # copys IDL file everytime we run anchor build, but won't copy program ID inside of the IDL

@@ -28,6 +28,28 @@ pub mod solana_twitter {
 
         Ok(())
     }
+
+    pub fn update_tweet(ctx: Context<UpdateTweet>, topic: String, content: String) -> ProgramResult {
+        let tweet: &mut Account<Tweet> = &mut ctx.accounts.tweet;
+
+        if topic.chars().count() > 50 {
+            return Err(ErrorCode::TopicTooLong.into())
+        }
+
+        if content.chars().count() > 280 {
+            return Err(ErrorCode::ContentTooLong.into())
+        }
+
+        tweet.topic = topic;
+        tweet.content = content;
+
+        Ok(())
+    }
+
+    pub fn delete_tweet(_ctx: Context<DeleteTweet>) -> ProgramResult {
+        Ok(())
+    }
+
 }
 
 #[error]
@@ -38,8 +60,7 @@ pub enum ErrorCode {
     ContentTooLong,
 }
 
-// Note: Transaction is an array of instructions
-// Code below defines the context for the SendTweet instruction, which is also an account
+/* Defines the context for instructions, which is also an account */
 /* 
     The line below is a derive attribute provided by Anchor that allows 
     the framework to generate a lot of code and macros for our 
@@ -54,6 +75,21 @@ pub struct SendTweet<'info> {
     pub author: Signer<'info>, //This is the same as the AccountInfo type except we're also saying this account should sign the instruction.
     #[account(address = system_program::ID)] // system_program::ID is a constant defined in Solana's codebase. By default, it's not included in Anchor's prelude::* import so we need to add the following line afterwards — at the very top of our lib.rs file.
     pub system_program: AccountInfo<'info>, //This is an account type provided by Anchor. It wraps the AccountInfo in another struct that parses the data according to an account struct provided as a generic type. In the example above, Account<'info, Tweet> means this is an account of type Tweet and the data should be parsed accordingly.
+}
+
+#[derive(Accounts)]
+pub struct UpdateTweet<'info> {
+    #[account(mut, has_one = author)] //has_one - Anchor will build an appropriate macro for us that will reject the instruction if the signed author does not match the tweet’s author.
+    pub tweet: Account<'info, Tweet>,
+    pub author: Signer<'info>,
+    /* !Note: No need system_program account here as we no need to access Clock component in the system program */
+}
+
+#[derive(Accounts)]
+pub struct DeleteTweet<'info> {
+    #[account(mut, has_one = author, close = author)]
+    pub tweet: Account<'info, Tweet>,
+    pub author: Signer<'info>,
 }
 
 // 1. Define the structure of the Tweet account.
