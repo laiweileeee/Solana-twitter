@@ -14,9 +14,13 @@ Change into the project directory you'd like to run
 
 Install the dependencies
 
-```npm install```
+```
+yarn install
+```
 Start a local Solana node
-```solana-test-validator```
+```
+solana-test-validator
+```
 Build the anchor project
 ```anchor build```
 Fetch the project ID for the build:
