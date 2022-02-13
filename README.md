@@ -7,26 +7,26 @@ Site can be found in the description
 - [x] Vue.js framwork
 - [x] Solana tool suite 
 
-To build
+## To build
 Clone the repo
-git clone git@github.com:dabit3/complete-guide-to-full-stack-solana.git
+`git clone git@github.com:dabit3/complete-guide-to-full-stack-solana.git`
 Change into the project directory you'd like to run
 
 Install the dependencies
 
-npm install
+`npm install`
 Start a local Solana node
-solana-test-validator
+`solana-test-validator`
 Build the anchor project
-anchor build
+`anchor build`
 Fetch the project ID for the build:
-solana address -k target/deploy/<programname>-keypair.json
+`solana address -k target/deploy/<programname>-keypair.json`
 Update the project ID in the Rust program located at projectname/programs/src/programname.rs with the output from above.
 
 Run the tests
 
-anchor test
+`anchor test`
 Change into the app directory and install the dependencies:
-cd app && npm install
+`cd app && yarn install`
 Run the client-side app
-npm start
+`yarn start`
