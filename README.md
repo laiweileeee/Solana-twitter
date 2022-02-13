@@ -31,7 +31,7 @@ Fetch the project ID for the build:
 ```
 solana address -k target/deploy/<programname>-keypair.json
 ```
-Update the project ID in the Rust program located at projectname/programs/src/programname.rs with the output from above.
+Update the project ID in the Rust program located at solana-twitter/programs/solana-twitter/src/lib.rs with the output from above.
 
 Run the tests
 
