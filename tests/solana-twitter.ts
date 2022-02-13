@@ -22,6 +22,7 @@ describe("solana-twitter", () => {
         systemProgram: anchor.web3.SystemProgram.programId,
       },
       signers: [tweet],
+      sol,
     });
 
     // Fetch the account details of the created tweet.
