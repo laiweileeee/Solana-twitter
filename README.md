@@ -1,6 +1,7 @@
 # solana-twitter
-
 Site can be found in the description 
+
+Things I learnt
 - [x] Solana architecture
 - [x] Rust basics
 - [x] Anchor framwork
