@@ -14,7 +14,7 @@ Change into the project directory you'd like to run
 
 Install the dependencies
 
-`npm install`
+```npm install```
 Start a local Solana node
 `solana-test-validator`
 Build the anchor project
