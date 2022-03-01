@@ -1,6 +1,8 @@
 # solana-twitter
 Site can be found in the description 
 
+![](https://github.com/laiweileeee/solana-twitter/blob/main/solana-tweeter.gif)
+
 Things I learnt
 - [x] Solana architecture
 - [x] Rust basics
