@@ -1,5 +1,6 @@
 # solana-twitter
-Site can be found in the description 
+
+solana-tweeter.netlify.app/#/
 
 ![](https://github.com/laiweileeee/solana-twitter/blob/main/solana-tweeter.gif)
 
