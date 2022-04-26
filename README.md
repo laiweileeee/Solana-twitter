@@ -2,8 +2,6 @@
 
 [solana-tweeter.netlify.app/#/](solana-tweeter.netlify.app/#/)
 
-![](https://github.com/laiweileeee/solana-twitter/blob/main/solana-tweeter.gif)
-
 <p align="center">
   <img src="solana-tweeter.gif" alt="animated" />
 </p>
