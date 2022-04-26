@@ -2,7 +2,7 @@
 
 [solana-tweeter.netlify.app/#/](solana-tweeter.netlify.app/#/)
 
-![](https://github.com/laiweileeee/solana-twitter/blob/main/solana-tweeter.gif)
+<center>![](https://github.com/laiweileeee/solana-twitter/blob/main/solana-tweeter.gif)</center>
 
 Things I learnt
 - [x] Solana architecture
